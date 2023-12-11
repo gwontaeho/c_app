@@ -10,33 +10,33 @@ import {Header, Input, Layout, Text, Button} from '@/components';
 
 export const OfferCreate = () => {
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <SafeAreaView style={{flex: 1}}>
-        <Header right={<Text>등록</Text>}>asd</Header>
-        <KeyboardAvoidingView
-          style={{flex: 1}}
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-          <ScrollView>
-            <Layout flex={1} p={16} gap={40}>
-              <Layout gap={8}>
-                <Text size="lg">a</Text>
-                <Input />
-              </Layout>
-              <Layout gap={8}>
-                <Text size="lg">b</Text>
-                <Input keyboardType="number-pad" />
-              </Layout>
-              <Layout gap={8}>
-                <Text size="lg">c</Text>
-                <Input multiline={true} />
-              </Layout>
-              <Layout gap={8}>
-                <Button>불러오기</Button>
-              </Layout>
+    // <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <SafeAreaView style={{flex: 1}}>
+      <Header close={true}>Offer Create</Header>
+      <KeyboardAvoidingView
+        style={{flex: 1}}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        <ScrollView>
+          <Layout flex={1} p={24} gap={32} b>
+            <Layout gap={8}>
+              <Text size="lg">Platform</Text>
+              <Input />
             </Layout>
-          </ScrollView>
-        </KeyboardAvoidingView>
-      </SafeAreaView>
-    </TouchableWithoutFeedback>
+            <Layout gap={8}>
+              <Text size="lg">ScrollView</Text>
+              <Input keyboardType="number-pad" />
+            </Layout>
+            <Layout gap={8}>
+              <Text size="lg">SafeAreaView</Text>
+              <Input multiline={true} />
+            </Layout>
+            <Layout gap={8}>
+              <Button>불러오기</Button>
+            </Layout>
+          </Layout>
+        </ScrollView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
+    // </TouchableWithoutFeedback>
   );
 };

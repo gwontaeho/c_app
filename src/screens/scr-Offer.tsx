@@ -2,27 +2,21 @@ import {Pressable, ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Header, Layout, Button, Text} from '@/components';
 
-export const Offer = () => {
-  const handlePressNext = () => {};
+export const Offer = props => {
+  const {navigation} = props;
+  const handlePressNext = () => {
+    navigation.navigate('My');
+  };
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      <Header></Header>
+      <Header back={true}></Header>
       <ScrollView contentContainerStyle={{paddingBottom: 64}}>
         <Layout p={16} gap={32}>
           <Text size="xl">
             Lorem Ipsum is simply dummy text of the printing
           </Text>
-          <Layout style={{borderWidth: 1, borderRadius: 8}}>
-            <Layout p={16}>
-              <Text>시급</Text>
-              <Text>9,620</Text>
-            </Layout>
-            <Layout p={16}>
-              <Text>주소</Text>
-              <Text>인천 부평구 마장로 36번길 26 401호</Text>
-            </Layout>
-          </Layout>
+
           <Text size="lg">
             Lorem Ipsum has been the industry's standard dummy text ever since
             the 1500s, when an unknown printer took a galley of type and

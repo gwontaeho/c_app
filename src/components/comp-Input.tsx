@@ -18,8 +18,7 @@ export const Input = forwardRef<TextInput, InputProps>((props, ref) => {
       {...props}
       ref={ref}
       style={{
-        borderWidth: 1,
-        borderRadius: 8,
+        borderBottomWidth: 1,
         padding: 8,
         minHeight: inputSizes[size],
       }}

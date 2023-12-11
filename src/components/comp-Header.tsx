@@ -1,48 +1,53 @@
 import {ReactNode} from 'react';
 import {Pressable, View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {IcoLeft, IcoClose} from '@/assets/icons';
+import {Layout} from './comp-Layout';
 
 type HeaderProps = {
   children?: ReactNode;
-  right?: ReactNode;
+  back?: boolean;
+  close?: boolean;
 };
 
 export const Header = (props: HeaderProps) => {
-  const {children, right} = props;
+  const {children, back, close} = props;
   const navigation = useNavigation();
 
   return (
     <View
       style={{
-        height: 48,
+        height: 56,
         flexDirection: 'row',
         alignItems: 'center',
       }}>
-      <View style={{flex: 1, alignItems: 'flex-start'}}>
+      {back && (
         <Pressable
+          onPress={() => navigation.goBack()}
           style={{
             height: '100%',
             justifyContent: 'center',
             paddingHorizontal: 16,
-          }}
-          onPress={() => navigation.goBack()}>
-          <Text>뒤로</Text>
+          }}>
+          <IcoLeft width={20} height={20} />
         </Pressable>
-      </View>
-      <View>
-        <Text>{children}</Text>
-      </View>
-      <View style={{flex: 1, alignItems: 'flex-end'}}>
+      )}
+
+      <Text style={{flex: 1, fontSize: 16, paddingHorizontal: back ? 0 : 24}}>
+        {children}
+      </Text>
+
+      {close && (
         <Pressable
+          onPress={() => navigation.goBack()}
           style={{
             height: '100%',
             justifyContent: 'center',
             paddingHorizontal: 16,
-          }}
-          onPress={() => navigation.goBack()}>
-          {right}
+          }}>
+          <IcoClose width={20} height={20} />
         </Pressable>
-      </View>
+      )}
     </View>
   );
 };

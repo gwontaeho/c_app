@@ -1,35 +1,9 @@
 import {Text, FlatList, Pressable} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {useNavigation} from '@react-navigation/native';
-
 import {Layout, Button, Input} from '@/components';
+import {IcoPlus} from '@/assets/icons';
 
-export const Offers = () => {
-  return (
-    <SafeAreaView style={{flex: 1}}>
-      <List />
-    </SafeAreaView>
-  );
-};
-
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-];
+import {getMock} from '@/utils';
 
 type ItemProps = {title: string};
 
@@ -43,19 +17,28 @@ const Item = ({title}: ItemProps) => (
   </Layout>
 );
 
-const List = () => {
-  const navigation = useNavigation();
+export const Offers = props => {
+  const {navigation} = props;
+
   return (
     <FlatList
-      data={DATA}
-      ItemSeparatorComponent={() => <Layout p={8} />}
+      data={getMock()}
+      ListHeaderComponent={
+        <Layout ai="flex-end">
+          <Pressable onPress={() => navigation.navigate('OfferCreate')}>
+            <Layout direction="row" p={4}>
+              <IcoPlus width={16} height={16} />
+              <Text>등록</Text>
+            </Layout>
+          </Pressable>
+        </Layout>
+      }
       renderItem={({item}) => (
         <Pressable onPress={() => navigation.navigate('Offer')}>
-          <Item title={item.title} />
+          <Item title={item} />
         </Pressable>
       )}
-      keyExtractor={item => item.id}
-      contentContainerStyle={{padding: 16}}
+      contentContainerStyle={{padding: 16, gap: 16}}
     />
   );
 };

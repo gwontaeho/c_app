@@ -3,3 +3,4 @@ export * from './comp-Layout';
 export * from './comp-Button';
 export * from './comp-Header';
 export * from './comp-Text';
+export * from './comp-Switch';

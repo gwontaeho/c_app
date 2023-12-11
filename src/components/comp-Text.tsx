@@ -7,16 +7,30 @@ const textSizes = {
   lg: 16,
   xl: 18,
   xxl: 20,
+  xxxl: 22,
 };
 
 type TextProps = {
   children?: ReactNode;
   size?: keyof typeof textSizes;
+  p?: number;
+  px?: number;
+  py?: number;
+  f?: number;
 };
 
 export const Text = (props: TextProps) => {
-  const {children, size = 'md'} = props;
+  const {children, size = 'md', p, px, py, f} = props;
   return (
-    <NativeText style={{fontSize: textSizes[size]}}>{children}</NativeText>
+    <NativeText
+      style={{
+        fontSize: textSizes[size],
+        padding: p,
+        paddingHorizontal: px,
+        paddingVertical: py,
+        flex: f,
+      }}>
+      {children}
+    </NativeText>
   );
 };
