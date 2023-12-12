@@ -8,7 +8,7 @@ export const Applicant = props => {
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      <Header close={true}>Applicant</Header>
+      <Header back={true}>Applicant</Header>
     </SafeAreaView>
   );
 };

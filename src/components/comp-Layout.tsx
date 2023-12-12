@@ -1,16 +1,34 @@
 import {View, ViewProps} from 'react-native';
 
 type LayoutProps = ViewProps & {
-  direction?: 'row' | 'column';
   flex?: number;
   gap?: number;
+  direction?: 'row' | 'column';
+  pos?: 'absolute' | 'relative';
+
   w?: number;
   h?: number;
+
   p?: number;
+  pt?: number;
+  pb?: number;
+  pl?: number;
+  pr?: number;
   px?: number;
   py?: number;
+
   b?: boolean;
+  bt?: boolean;
+  bb?: boolean;
+  bl?: boolean;
+  br?: boolean;
+  bx?: boolean;
+  by?: boolean;
+
   r?: boolean;
+  rt?: boolean;
+  rb?: boolean;
+
   jc?:
     | 'flex-start'
     | 'flex-end'

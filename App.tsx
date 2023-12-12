@@ -155,7 +155,7 @@ const App = () => {
         <Stack.Screen
           name="OfferCreate"
           component={OfferCreate}
-          options={{headerShown: false, presentation: 'fullScreenModal'}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="OfferModify"
@@ -194,7 +194,7 @@ const App = () => {
         <Stack.Screen
           name="Applicant"
           component={Applicant}
-          options={{headerShown: false, presentation: 'fullScreenModal'}}
+          options={{headerShown: false}}
         />
 
         <Stack.Screen

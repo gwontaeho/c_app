@@ -1,4 +1,3 @@
-import {type PropsWithChildren} from 'react';
 import {Pressable, PressableProps, Text} from 'react-native';
 
 const buttonSizes = {
@@ -7,25 +6,27 @@ const buttonSizes = {
   lg: 48,
 };
 
-type ButtonProps = PropsWithChildren &
-  PressableProps & {
-    size?: keyof typeof buttonSizes;
-  };
+type ButtonProps = PressableProps & {
+  size?: keyof typeof buttonSizes;
+};
 
 export const Button = (props: ButtonProps) => {
-  const {children, size = 'md'} = props;
+  const {children, size = 'md', style} = props;
 
   return (
     <Pressable
       {...props}
-      style={{
-        borderRadius: 8,
-        paddingHorizontal: 8,
-        backgroundColor: '#000',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: buttonSizes[size],
-      }}>
+      style={[
+        {
+          borderRadius: 8,
+          paddingHorizontal: 8,
+          backgroundColor: '#000',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: buttonSizes[size],
+        },
+        style,
+      ]}>
       <Text style={{color: '#fff'}}>{children}</Text>
     </Pressable>
   );

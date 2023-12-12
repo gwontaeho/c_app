@@ -12,7 +12,7 @@ export const OfferCreate = () => {
   return (
     // <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <SafeAreaView style={{flex: 1}}>
-      <Header close={true}>Offer Create</Header>
+      <Header back={true}>Offer Create</Header>
       <KeyboardAvoidingView
         style={{flex: 1}}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
