@@ -46,6 +46,7 @@ import {MyApplication} from '@/screens/scr-MyApplication';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {IcoHome, IcoSearch, IcoChat, IcoUser} from '@/assets/icons';
+import {Layout, Text} from '@/components';
 
 type StackParamList = {
   Main: undefined;
@@ -81,9 +82,20 @@ const ServicesTab = createMaterialTopTabNavigator<ServicesTabProps>();
 const Services = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
-      <ServicesTab.Navigator>
-        <ServicesTab.Screen name="Offers" component={Offers} />
-        <ServicesTab.Screen name="Searches" component={Searches} />
+      <ServicesTab.Navigator
+        screenOptions={{
+          tabBarStyle: {width: '48%', backgroundColor: 'transparent'},
+        }}>
+        <ServicesTab.Screen
+          name="Offers"
+          component={Offers}
+          options={{tabBarLabel: 'offe'}}
+        />
+        <ServicesTab.Screen
+          name="Searches"
+          component={Searches}
+          options={{tabBarLabel: 'sear'}}
+        />
       </ServicesTab.Navigator>
     </SafeAreaView>
   );

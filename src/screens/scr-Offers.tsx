@@ -1,7 +1,7 @@
-import {Text, FlatList, Pressable} from 'react-native';
+import {FlatList, Pressable} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Layout, Button, Input} from '@/components';
-import {IcoPlus} from '@/assets/icons';
+import {Layout, Button, Text} from '@/components';
+import {IcoFilter} from '@/assets/icons';
 
 import {getMock} from '@/utils';
 
@@ -23,16 +23,14 @@ export const Offers = props => {
   return (
     <FlatList
       data={getMock()}
-      ListHeaderComponent={
-        <Layout ai="flex-end">
-          <Pressable onPress={() => navigation.navigate('OfferCreate')}>
-            <Layout direction="row" p={4}>
-              <IcoPlus width={16} height={16} />
-              <Text>등록</Text>
-            </Layout>
-          </Pressable>
+      ListHeaderComponent={() => (
+        <Layout direction="row" ai="center" px={8}>
+          <Layout flex={1}>
+            <Text size="sm">전체</Text>
+          </Layout>
+          <IcoFilter width={24} height={24} />
         </Layout>
-      }
+      )}
       renderItem={({item}) => (
         <Pressable onPress={() => navigation.navigate('Offer')}>
           <Item title={item} />
