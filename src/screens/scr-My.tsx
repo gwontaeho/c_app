@@ -38,19 +38,19 @@ export const My = props => {
       <ScrollView>
         <Layout p={16} gap={16}>
           <Pressable onPress={() => navigation.navigate('OfferCreate')}>
-            <Layout b={true} r={true} p={16} direction="row" ai="center">
+            <Layout r={true} p={16} direction="row" ai="center" bg="#fff">
               <Text f={1}>Create Offer</Text>
               <IcoRight width={16} height={16} />
             </Layout>
           </Pressable>
           <Pressable onPress={() => navigation.navigate('Applicants')}>
-            <Layout b={true} r={true} p={16} direction="row" ai="center">
+            <Layout r={true} p={16} direction="row" ai="center" bg="#fff">
               <Text f={1}>Applicants</Text>
               <IcoRight width={16} height={16} />
             </Layout>
           </Pressable>
           <Pressable onPress={() => navigation.navigate('MyOffers')}>
-            <Layout b={true} r={true} p={16} direction="row" ai="center">
+            <Layout r={true} p={16} direction="row" ai="center" bg="#fff">
               <Text f={1}>My Offers</Text>
               <IcoRight width={16} height={16} />
             </Layout>

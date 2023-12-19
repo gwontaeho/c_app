@@ -29,6 +29,8 @@ type LayoutProps = ViewProps & {
   rt?: boolean;
   rb?: boolean;
 
+  bg?: string;
+
   jc?:
     | 'flex-start'
     | 'flex-end'
@@ -51,6 +53,7 @@ export const Layout = (props: LayoutProps) => {
     py,
     jc,
     ai,
+    bg,
     w,
     h,
     b,
@@ -64,6 +67,7 @@ export const Layout = (props: LayoutProps) => {
           flex,
           gap,
           flexDirection: direction,
+          backgroundColor: bg,
           padding: p,
           paddingHorizontal: px,
           paddingVertical: py,
