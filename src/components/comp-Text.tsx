@@ -1,7 +1,7 @@
 import {ReactNode} from 'react';
 import {Text as NativeText} from 'react-native';
 
-const textSizes = {
+const TEXT_SIZES = {
   sm: 12,
   md: 14,
   lg: 16,
@@ -12,7 +12,7 @@ const textSizes = {
 
 type TextProps = {
   children?: ReactNode;
-  size?: keyof typeof textSizes;
+  size?: keyof typeof TEXT_SIZES;
   p?: number;
   px?: number;
   py?: number;
@@ -24,7 +24,7 @@ export const Text = (props: TextProps) => {
   return (
     <NativeText
       style={{
-        fontSize: textSizes[size],
+        fontSize: TEXT_SIZES[size],
         padding: p,
         paddingHorizontal: px,
         paddingVertical: py,

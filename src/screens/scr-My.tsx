@@ -49,9 +49,21 @@ export const My = props => {
               <IcoRight width={16} height={16} />
             </Layout>
           </Pressable>
-          <Pressable onPress={() => navigation.navigate('MyOffers')}>
+          <Pressable onPress={() => navigation.navigate('Signin')}>
             <Layout r={true} p={16} direction="row" ai="center" bg="#fff">
-              <Text f={1}>My Offers</Text>
+              <Text f={1}>Signin</Text>
+              <IcoRight width={16} height={16} />
+            </Layout>
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate('StoreRegist')}>
+            <Layout r={true} p={16} direction="row" ai="center" bg="#fff">
+              <Text f={1}>store regist</Text>
+              <IcoRight width={16} height={16} />
+            </Layout>
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate('ResumeRegist')}>
+            <Layout r={true} p={16} direction="row" ai="center" bg="#fff">
+              <Text f={1}>resume regist</Text>
               <IcoRight width={16} height={16} />
             </Layout>
           </Pressable>
